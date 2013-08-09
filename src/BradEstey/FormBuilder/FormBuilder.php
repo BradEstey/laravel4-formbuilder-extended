@@ -1,6 +1,33 @@
 <?php namespace BradEstey\FormBuilder;
 
+use \Illuminate\Routing\UrlGenerator;
+use \Illuminate\Html\HtmlBuilder as Html;
+use Symfony\Component\Translation\TranslatorInterface;
+
 class FormBuilder extends \Illuminate\Html\FormBuilder {
+
+	/**
+	 * The Translator implementation.
+	 *
+	 * @var Symfony\Component\Translation\TranslatorInterface
+	 */
+	protected $translator;
+
+	/**
+	 * Create a new form builder instance.
+	 *
+	 * @param  \Illuminate\Routing\UrlGenerator  $url
+	 * @param  \Illuminate\Html\HtmlBuilder  $html
+	 * @param  string  $csrfToken
+	 * @return void
+	 */
+	public function __construct(HtmlBuilder $html, UrlGenerator $url, $csrfToken, TranslatorInterface $translator)
+	{
+		$this->url = $url;
+		$this->html = $html;
+		$this->csrfToken = $csrfToken;
+		$this->translator = $translator;
+	}
 
 	/**
 	 * Create a select box field.
@@ -47,4 +74,32 @@ class FormBuilder extends \Illuminate\Html\FormBuilder {
 
 		return "<select{$options}>{$list}</select>";
 	}
+
+	/**
+	 * Create a select month field.
+	 *
+	 * @param  string  $name
+	 * @param  string  $selected
+	 * @param  array   $options
+	 * @param  array   $prepend
+	 * @return string
+	 */
+	public function selectMonth($name, $selected = null, $options = array(), $prepend = array())
+	{
+		$months = $prepend;
+
+		foreach (range(1, 12) as $month)
+		{
+			$months[$month] = strftime('%B', mktime(0, 0, 0, $month, 1));
+			
+			$key = 'datetime.'.strtolower($months[$month]);
+			if ($key != $this->translator->trans($key))
+			{
+				$months[$month] = $this->translator->trans($key);
+			}			
+		}
+
+		return $this->select($name, $months, $selected, $options);
+	}	
+
 }

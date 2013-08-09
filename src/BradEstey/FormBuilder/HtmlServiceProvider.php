@@ -11,7 +11,7 @@ class HtmlServiceProvider extends \Illuminate\Html\HtmlServiceProvider {
 	{
 		$this->app['form'] = $this->app->share(function($app)
 		{
-			$form = new FormBuilder($app['html'], $app['url'], $app['session']->getToken());
+			$form = new FormBuilder($app['html'], $app['url'], $app['session']->getToken(), $app['translator']);
 
 			return $form->setSessionStore($app['session']);
 		});
