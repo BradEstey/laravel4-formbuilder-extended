@@ -1,7 +1,7 @@
 <?php namespace BradEstey\FormBuilder;
 
 use \Illuminate\Routing\UrlGenerator;
-use \Illuminate\Html\HtmlBuilder as Html;
+use \Illuminate\Html\HtmlBuilder;
 use Symfony\Component\Translation\TranslatorInterface;
 
 class FormBuilder extends \Illuminate\Html\FormBuilder {
