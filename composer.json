@@ -1,0 +1,21 @@
+{
+    "name": "bradestey/formbuilder",
+    "description": "Laravel 4 extended FormBuilder Class.",
+    "keywords": ["laravel", "formbuilder"],
+    "authors": [
+        {
+            "name": "Brad Estey",
+            "email": "brad@bradestey.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.0.x"
+    },
+    "autoload": {
+        "psr-0": {
+            "BradEstey\\FormBuilder": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
