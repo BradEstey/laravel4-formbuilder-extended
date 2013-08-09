@@ -2,7 +2,7 @@
 
 use \Illuminate\Routing\UrlGenerator;
 use \Illuminate\Html\HtmlBuilder;
-use Symfony\Component\Translation\TranslatorInterface;
+use \Symfony\Component\Translation\TranslatorInterface;
 
 class FormBuilder extends \Illuminate\Html\FormBuilder {
 
@@ -19,6 +19,7 @@ class FormBuilder extends \Illuminate\Html\FormBuilder {
 	 * @param  \Illuminate\Routing\UrlGenerator  $url
 	 * @param  \Illuminate\Html\HtmlBuilder  $html
 	 * @param  string  $csrfToken
+	 * @param  \Symfony\Component\Translation\TranslatorInterface  $translator
 	 * @return void
 	 */
 	public function __construct(HtmlBuilder $html, UrlGenerator $url, $csrfToken, TranslatorInterface $translator)
@@ -81,10 +82,9 @@ class FormBuilder extends \Illuminate\Html\FormBuilder {
 	 * @param  string  $name
 	 * @param  string  $selected
 	 * @param  array   $options
-	 * @param  array   $prepend
 	 * @return string
 	 */
-	public function selectMonth($name, $selected = null, $options = array(), $prepend = array())
+	public function selectMonth($name, $selected = null, $options = array())
 	{
 		$months = $prepend;
 
