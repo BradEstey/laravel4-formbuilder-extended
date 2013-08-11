@@ -1,5 +1,5 @@
 {
-    "name": "bradestey/formbuilder",
+    "name": "estey/formbuilder",
     "description": "Laravel 4 extended FormBuilder Class.",
     "keywords": ["laravel", "formbuilder"],
     "authors": [
@@ -14,7 +14,7 @@
     },
     "autoload": {
         "psr-0": {
-            "BradEstey\\FormBuilder": "src/"
+            "Estey\\FormBuilder": "src/"
         }
     },
     "minimum-stability": "dev"
