@@ -93,7 +93,7 @@ class FormBuilder extends \Illuminate\Html\FormBuilder {
 			$months[$month] = strftime('%B', mktime(0, 0, 0, $month, 1));
 			
 			$key = 'datetime.'.strtolower($months[$month]);
-			if ($key != $this->translator->trans($key))
+			if ($this->translator->has($key))
 			{
 				$months[$month] = $this->translator->trans($key);
 			}			
@@ -120,7 +120,7 @@ class FormBuilder extends \Illuminate\Html\FormBuilder {
 			$days[$day] = $day_names[$day - 1];
 			
 			$key = 'datetime.'.strtolower($days[$day]);
-			if ($key != $this->translator->trans($key))
+			if ($this->translator->has($key))
 			{
 				$days[$day] = $this->translator->trans($key);
 			}			
