@@ -16,13 +16,13 @@ Then, update Composer:
 
     composer update
 
-Open `app/config/app.php`, and replace 'Illuminate\Html\HtmlServiceProvider' with:
+Open `app/config/app.php`, and replace `'Illuminate\Html\HtmlServiceProvider'` with:
 
     'Estey\FormBuilder\HtmlServiceProvider'
 
 ## Usage
 
-- [selectWeekday](#selectWeekday)
+- [selectWeekday](#selectweekday)
 - [Translations](#translations)
 - [Prepend Options](#prepend-options)
 
@@ -30,12 +30,12 @@ Open `app/config/app.php`, and replace 'Illuminate\Html\HtmlServiceProvider' wit
 
 The `selectWeekday` method allows you to quickly generate a select field with a list of weekdays.
 
-     selectWeekday('weekday', '1', array('id' => 'foo'));
+     selectWeekday('weekday');
      
 Will return:
 
-     <select name="weekday" id="foo">
-      	<option value="1" selected="selected">Sunday</option>
+     <select name="weekday">
+      	<option value="1">Sunday</option>
       	<option value="2">Monday</option>
       	<option value="3">Tuesday</option>
       	<option value="4">Wednesday</option>
@@ -46,9 +46,9 @@ Will return:
 
 ### Translations
 
-The `selectWeekday` and `selectMonth` methods will respect the locale settings. For example, to use Spanish, create a `app/lang/es` directory and create a file named `datetime.php`. The `datetime.php` should be formatted as follows:
+The `selectWeekday` and `selectMonth` methods will respect the locale settings. For example, to use Spanish, create a `app/lang/es` directory and create a file named `datetime.php`. The `app/lang/es/datetime.php` file should be formatted as follows:
 
-	<?php
+	<?php // app/lang/es/datetime.php
 
 	return array(
 
@@ -89,9 +89,12 @@ After setting the locale to 'es' and creating the `app/lang/es/datetime.php` fil
 
 ### Prepend Options
 
-To prepend options to a `selectWeekday` and `selectMonth` method, add a `_prepend` option to the options array.
+To prepend options to a `selectWeekday` and `selectMonth` method, add a `_prepend` array to the options array.
 
-     selectMonth('month', '', array('id' => 'foo', '_prepend' => array('' => '-- Choose a Month --')));
+     selectMonth('month', '', array(
+     	'id' => 'foo', 
+     	'_prepend' => array('' => '-- Choose a Month --')
+     ));
 
 Will return:
 
