@@ -16,7 +16,7 @@
         "illuminate/translation": "4.0.x",
         "illuminate/http": "4.0.x",        
         "illuminate/routing": "4.0.x",
-        "symfony/routing": "2.3.*",
+        "symfony/routing": "2.3.*"
     },
     "require-dev": {
         "mockery/mockery": "dev-master"
