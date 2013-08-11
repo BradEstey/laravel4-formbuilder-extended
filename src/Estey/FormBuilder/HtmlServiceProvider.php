@@ -1,4 +1,4 @@
-<?php namespace BradEstey\FormBuilder;
+<?php namespace Estey\FormBuilder;
 
 class HtmlServiceProvider extends \Illuminate\Html\HtmlServiceProvider {
 

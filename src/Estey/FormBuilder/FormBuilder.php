@@ -1,4 +1,4 @@
-<?php namespace BradEstey\FormBuilder;
+<?php namespace Estey\FormBuilder;
 
 use \Illuminate\Routing\UrlGenerator;
 use \Illuminate\Html\HtmlBuilder;
@@ -86,7 +86,7 @@ class FormBuilder extends \Illuminate\Html\FormBuilder {
 	 */
 	public function selectMonth($name, $selected = null, $options = array())
 	{
-		$months = $prepend;
+		$months = array();
 
 		foreach (range(1, 12) as $month)
 		{
@@ -102,4 +102,30 @@ class FormBuilder extends \Illuminate\Html\FormBuilder {
 		return $this->select($name, $months, $selected, $options);
 	}	
 
+	/**
+	 * Create a select day of the week field.
+	 *
+	 * @param  string  $name
+	 * @param  string  $selected
+	 * @param  array   $options
+	 * @return string
+	 */
+	public function selectWeekday($name, $selected = null, $options = array())
+	{
+		$days = array();
+		$day_names = array('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday');
+
+		foreach (range(1, 7) as $day)
+		{
+			$days[$day] = $day_names[$day - 1];
+			
+			$key = 'datetime.'.strtolower($days[$day]);
+			if ($key != $this->translator->trans($key))
+			{
+				$days[$day] = $this->translator->trans($key);
+			}			
+		}
+
+		return $this->select($name, $days, $selected, $options);
+	}
 }
