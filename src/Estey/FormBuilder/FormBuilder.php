@@ -9,7 +9,7 @@ class FormBuilder extends \Illuminate\Html\FormBuilder {
 	/**
 	 * The Translator implementation.
 	 *
-	 * @var Symfony\Component\Translation\TranslatorInterface
+	 * @var \Symfony\Component\Translation\TranslatorInterface
 	 */
 	protected $translator;
 
