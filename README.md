@@ -1,14 +1,16 @@
-# Laravel 4 FormBuilder Extended
+Laravel 4 FormBuilder Extended
+==============================
 
 This class extends Laravel 4's FormBuilder class adding a `selectWeekday` method, translations to `selectWeekday` and `selectMonth`, and adds the ability to prepend an array of options to select fields.
 
-## Installation
+Installation
+------------
 
 Install this package through Composer by editing your project's `composer.json` file to require `estey/formbuilder`.
 
 ``` json
 "require": {
-    "estey/formbuilder": "4.1.*"
+    "estey/formbuilder": "4.2.*"
 }
 ```
 
@@ -20,13 +22,15 @@ Open `app/config/app.php`, and replace `'Illuminate\Html\HtmlServiceProvider'` w
 
     'Estey\FormBuilder\HtmlServiceProvider'
 
-## Usage
+Usage
+-----
 
 - [selectWeekday](#selectweekday)
 - [Translations](#translations)
 - [Prepend Options](#prepend-options)
 
-### selectWeekday
+selectWeekday
+-------------
 
 The `selectWeekday` method allows you to quickly generate a select field with a list of weekdays.
 
@@ -48,7 +52,8 @@ Will return:
 </select>
 ```
 
-### Translations
+Translations
+------------
 
 The `selectWeekday` and `selectMonth` methods will respect the locale settings. For example, to use Spanish, create a `app/lang/es` directory and create a file named `datetime.php`. The `app/lang/es/datetime.php` file should be formatted as follows:
 
@@ -95,7 +100,8 @@ After setting the locale to 'es' and creating the `app/lang/es/datetime.php` fil
 </select>     
 ```
 
-### Prepend Options
+Prepend Options
+---------------
 
 To prepend options to a `selectWeekday` and `selectMonth` method, add a `_prepend` array to the options array.
 

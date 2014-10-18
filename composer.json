@@ -2,25 +2,41 @@
     "name": "estey/formbuilder",
     "description": "Laravel 4 extended FormBuilder Class.",
     "keywords": ["laravel", "laravel4", "formbuilder", "selectWeekday", "prepend"],
+    "homepage": "http://www.bradestey.com/projects/laravel-formbuilder",
     "license": "MIT",
     "authors": [
         {
             "name": "Brad Estey",
-            "email": "me@bradestey.com"
+            "email": "me@bradestey.com",
+            "homepage": "http://www.bradestey.com",
+            "role": "Developer"
         }
     ],
     "require": {
-        "php": ">=5.3.0",
-        "illuminate/html": "4.1.x",
-        "illuminate/translation": "4.1.x"
+        "php": ">=5.4.0",
+        "illuminate/html": "4.2.x",
+        "illuminate/translation": "4.2.x"
     },
     "require-dev": {
-        "mockery/mockery": "dev-master"
-    },        
+        "phpunit/phpunit": "~4.0",
+        "mockery/mockery": "dev-master",
+        "squizlabs/php_codesniffer": "~1.5",
+        "phpunit/php-code-coverage": "~2.0",
+        "satooshi/php-coveralls": "dev-master"
+    },
     "autoload": {
-        "psr-0": {
-            "Estey\\FormBuilder": "src/"
+        "psr-4": {
+            "Estey\\FormBuilder\\": "src"
         }
     },
-    "minimum-stability": "dev"
+    "autoload-dev": {
+        "psr-4": {
+            "Estey\\FormBuilder\\Test\\": "test"
+        }
+    },           
+    "extra": {
+        "branch-alias": {
+            "dev-master": "4.2-dev"
+        }
+    }
 }
