@@ -8,7 +8,7 @@ Install this package through Composer by editing your project's `composer.json` 
 
 ``` json
 "require": {
-    "estey/formbuilder": "4.0.*"
+    "estey/formbuilder": "4.1.*"
 }
 ```
 
