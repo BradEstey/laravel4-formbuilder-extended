@@ -1,6 +1,8 @@
 Laravel 4 FormBuilder Extended
 ==============================
 
+[![Latest Stable Version](http://img.shields.io/packagist/v/estey/formbuilder.svg)](https://packagist.org/packages/estey/formbuilder) [![Build Status](https://travis-ci.org/BradEstey/laravel4-formbuilder-extended.svg?branch=4.2)](https://travis-ci.org/BradEstey/laravel4-formbuilder-extended) [![Coverage Status](https://img.shields.io/coveralls/BradEstey/laravel4-formbuilder-extended.svg)](https://coveralls.io/r/BradEstey/laravel4-formbuilder-extended?branch=master)
+
 This class extends Laravel 4's FormBuilder class adding a `selectWeekday` method, translations to `selectWeekday` and `selectMonth`, and adds the ability to prepend an array of options to select fields.
 
 Installation
@@ -130,4 +132,9 @@ Will return:
     <option value="11">November</option>
     <option value="12">December</option>
 </select>   
-```  
+```
+
+License
+-------
+
+The MIT License (MIT). Please see [License File](https://github.com/BradEstey/laravel4-formbuilder-extended/blob/master/LICENSE) for more information.
