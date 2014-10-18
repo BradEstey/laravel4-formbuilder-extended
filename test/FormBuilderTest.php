@@ -3,11 +3,12 @@
 namespace Estey\FormBuilder\Test;
 
 use Mockery as m;
+use Illuminate\Http\Request;
 use Estey\FormBuilder\FormBuilder;
 use Illuminate\Html\HtmlBuilder;
 use Illuminate\Routing\UrlGenerator;
-use Illuminate\Http\Request;
-use Symfony\Component\Routing\RouteCollection;
+use Illuminate\Routing\RouteCollection;
+use PHPUnit_Framework_TestCase;
 
 class FormBuilderTest extends PHPUnit_Framework_TestCase
 {
