@@ -11,18 +11,24 @@ Installation
 Install this package through Composer by editing your project's `composer.json` file to require `estey/formbuilder`.
 
 ``` json
-"require": {
-    "estey/formbuilder": "4.2.*"
+{
+    "require": {
+        "estey/formbuilder": "4.2.*"
+    }
 }
 ```
 
 Then, update Composer:
 
-    composer update
+``` bash
+composer update
+```
 
 Open `app/config/app.php`, and replace `'Illuminate\Html\HtmlServiceProvider'` with:
 
-    'Estey\FormBuilder\HtmlServiceProvider'
+```
+'Estey\FormBuilder\HtmlServiceProvider'
+```
 
 Usage
 -----
@@ -37,7 +43,7 @@ selectWeekday
 The `selectWeekday` method allows you to quickly generate a select field with a list of weekdays.
 
 ``` php
-     selectWeekday('weekday');
+selectWeekday('weekday');
 ```
 
 Will return:
@@ -57,38 +63,7 @@ Will return:
 Translations
 ------------
 
-The `selectWeekday` and `selectMonth` methods will respect the locale settings. For example, to use Spanish, create a `app/lang/es` directory and create a file named `datetime.php`. The `app/lang/es/datetime.php` file should be formatted as follows:
-
-``` php
-<?php // app/lang/es/datetime.php
-
-return array(
-
-    'january' => 'enero',
-    'february' => 'febrero',
-    'march' => 'marzo',
-    'april' => 'abril',
-    'may' => 'mayo',
-    'june' => 'junio',
-    'july' => 'julio',
-    'august' => 'agosto',
-    'september' => 'septiembre',
-    'october' => 'octubre',
-    'november' => 'noviembre',
-    'december' => 'diciembre',
-
-    'sunday' => 'domingo',
-    'monday' => 'lunes',
-    'tuesday' => 'martes',
-    'wednesday' => 'miércoles',
-    'thursday' => 'jueves',
-    'friday' => 'viernes',
-    'saturday' => 'sábado',
-
-);
-```
-
-After setting the locale to 'es' and creating the `app/lang/es/datetime.php` file, `selectWeekday()` should return:
+The `selectWeekday` and `selectMonth` methods in this extension will respect the locale settings. For example, to use Spanish, create an `app/lang/es` directory and copy over the example datetime file from this package `/src/lang/es/datetime.php` to `app/lang/es/datetime.php`. After setting the locale to 'es' in `app/config/app.php`, `selectWeekday()` should return:
 
 ``` html
 <select>
@@ -108,10 +83,10 @@ Prepend Options
 To prepend options to a `selectWeekday` and `selectMonth` method, add a `_prepend` array to the options array.
 
 ``` php
-selectMonth('month', '', array(
+selectMonth('month', '', [
     'id' => 'foo', 
-    '_prepend' => array('' => '-- Choose a Month --')
-));
+    '_prepend' => ['' => '-- Choose a Month --']
+]);
 ```
 
 Will return:
