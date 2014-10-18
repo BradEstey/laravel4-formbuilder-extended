@@ -13,7 +13,7 @@ class HtmlServiceProvider extends BaseHtmlServiceProvider
      */
     protected function registerFormBuilder()
     {
-        $this->app['form'] = $this->app->share(function ($app) {
+        $this->app->bindShared('form', function ($app) {
             $form = new FormBuilder(
                 $app['html'],
                 $app['url'],

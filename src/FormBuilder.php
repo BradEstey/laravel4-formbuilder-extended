@@ -55,7 +55,9 @@ class FormBuilder extends BaseFormBuilder
 
         $options['id'] = $this->getIdAttribute($name, $options);
 
-        $options['name'] = $name;
+        if (!isset($options['name'])) {
+            $options['name'] = $name;
+        }
 
         // Split the _prepend option out of the options array, if it exists.
         if (isset($options['_prepend'])) {
