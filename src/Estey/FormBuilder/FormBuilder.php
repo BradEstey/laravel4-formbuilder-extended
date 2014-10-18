@@ -82,15 +82,16 @@ class FormBuilder extends \Illuminate\Html\FormBuilder {
 	 * @param  string  $name
 	 * @param  string  $selected
 	 * @param  array   $options
+	 * @param  string  $format
 	 * @return string
 	 */
-	public function selectMonth($name, $selected = null, $options = array())
+	public function selectMonth($name, $selected = null, $options = array(), $format = '%B')
 	{
 		$months = array();
 
 		foreach (range(1, 12) as $month)
 		{
-			$months[$month] = strftime('%B', mktime(0, 0, 0, $month, 1));
+			$months[$month] = strftime($format, mktime(0, 0, 0, $month, 1));
 			
 			$key = 'datetime.'.strtolower($months[$month]);
 			if ($this->translator->has($key))
